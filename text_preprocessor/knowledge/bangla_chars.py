@@ -1,10 +1,3 @@
-"""
-        Bangla Characters for BLP
-        Author: Saimon
-        Email: saimoncse19@gmail.com
-        Dated: April 6, 2019
-        Contains: vowels, vowel signs, consonants, digits, punctuations, others
-"""
 
 
 # 1 independent vowels

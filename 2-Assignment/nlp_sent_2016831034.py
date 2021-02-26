@@ -1,44 +1,22 @@
+import sys
+import os 
+sys.path.append(os.path.abspath(os.path.join(__file__,"../../")))
+from text_preprocessor.SentenceSplitter import SentenceSplitter
+import argparse
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
+def parseArgs():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('-f','--filename',default='datasets/bangla.txt',help='file name')
+    args=parser.parse_args()
+
+    return args.filename
+
+if __name__=='__main__':
+    filename=parseArgs()
+    ss=SentenceSplitter()
+    ss.splitFileText(filename=filename)
 
 
-class Tokenizer:
-    def __init__(self):
-        self.punctuations = set(punctuations).difference({"-"})
-
-    def sentence_tokenizer(text: str) -> list:
-
-        terminator = ["।", "?", "!"]
-        tokens = []
-        for i in text:
-            if i in terminator:
-                my_string = text[:text.index(i)+1]
-                text = text[text.index(i)+1:]
-                tokens.append(my_string.strip())
-        return tokens
-
-    def word_tokenizer(self, text: str):
-        tokens = [i for i in text.split()]
-        final_tokens = []
-
-        for i in tokens:
-            word = i.strip()
-            if word[-1] in self.punctuations:
-                a = word[:-1]
-                b = word[-1]
-                final_tokens.append(a)
-                final_tokens.append(b)
-            elif word[0] in self.punctuations:
-                a = word[1:]
-                b = word[0]
-                final_tokens.append(a)
-                final_tokens.append(b)
-            else:
-                final_tokens.append(word)
-
-        return final_tokens
-
-    def sentence_splitter(self, sentences: list):
-        tokens = []
-        for sentence in sentences:
-            tokens.append(self.word_tokenizer(sentence))
-
-        return tokens
