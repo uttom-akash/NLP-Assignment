@@ -20,3 +20,5 @@ class SentenceSplitter(object):
     @WriteAfter(filename="output/SplitedSentence.txt")
     def splitText(self,text : str) -> list :
         return self.baseSplit(text)
+
+    

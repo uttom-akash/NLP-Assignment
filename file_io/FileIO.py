@@ -1,5 +1,6 @@
 from decorator.PathDecorator import PathMiddleware
 import logging
+import json
 
 class FileIO(object):
     def __init__(self):
@@ -40,10 +41,20 @@ class FileIO(object):
             logging.info("Write completed into {}.".format(filename))
     
     @PathMiddleware("F:/NLP Assignment")
+    def writeJson(self,filename: str, text : dict, mode : str = 'w'):
+        try:
+            with open(filename,mode,encoding='utf-8') as fout :
+                json.dump(text,fout, ensure_ascii=False,indent=4)
+        except IOError :
+            logging.error("ERROR : File Write Error")
+        finally :
+            logging.info("Json write completed into {}.".format(filename))
+    
+    @PathMiddleware("F:/NLP Assignment")
     def writeLines(self,filename: str, lines : list, mode : str = 'w'):
         try:
             with open(filename,mode,encoding='utf-8') as fout :
-                fout.writelines(lines)
+                fout.write("\n".join(lines))
         except IOError :
             logging.error("ERROR : File Write Error")
         finally :
