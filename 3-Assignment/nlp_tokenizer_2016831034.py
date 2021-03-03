@@ -2,6 +2,8 @@ import sys
 import os 
 sys.path.append(os.path.abspath(os.path.join(__file__,"../../")))
 from text_preprocessor.WordTokenizer import WordTokenizer
+from decorator.WriteDecorator import WriteAfter
+from decorator.ReadDecorator import ReadBefore
 import argparse
 import logging
 
@@ -14,10 +16,16 @@ def parseArgs():
 
     return args.filename
 
+@ReadBefore
+@WriteAfter("output/tokenizedWords.txt")
+def main(filename: str, text : str = ""):
+    wt=WordTokenizer()
+    tokens=wt.tokenize(text)
+    return tokens
+
 if __name__=='__main__':
     filename=parseArgs()
-    wt=WordTokenizer()
-    wt.tokenizeFileText(filename=filename)
+    main(filename=filename)
 
 
 

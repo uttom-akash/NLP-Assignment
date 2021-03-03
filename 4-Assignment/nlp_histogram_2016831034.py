@@ -2,6 +2,8 @@ import sys
 import os 
 sys.path.append(os.path.abspath(os.path.join(__file__,"../../")))
 from text_preprocessor.Statistics import Statistics
+from decorator.WriteDecorator import WriteAfter
+from decorator.ReadDecorator import ReadBefore
 import argparse
 import logging
 
@@ -14,7 +16,14 @@ def parseArgs():
 
     return args.filename
 
+@ReadBefore
+@WriteAfter(filename="output/histogram.json")
+def main(filename: str, text : str = ""):
+    st=Statistics()
+    stats=st.generate(text)
+    return stats
+
+
 if __name__=='__main__':
     filename=parseArgs()
-    st=Statistics()
-    st.generateFromFile(filename=filename)
+    main(filename=filename)

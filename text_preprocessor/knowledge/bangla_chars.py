@@ -16,6 +16,9 @@ vowel_signs_unicode = ["\u09BE", "\u09Bf", "\u09C0", "\u09C1", "\u09C2",
 # 3 Bengali numeric values
 
 digits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"]
+
+numberPattern="\b"+"".join(digits)+"\.?"+"".join(digits)
+
 digit_unicode = ["\u09E6", "\u09E7", "\u09E8", "\u09E9", "\u09EA", "\u09EB", "\u09EC", "\u09ED", "\u09EE", "\u09EF"]
 
 
@@ -56,3 +59,11 @@ unicode_operators = ["\u003D", "\u002B", "\u002D", "\u002A", "\u002F", "\u0025",
 
 others = ["৳", "৺", '্', "ঀ", "ঽ", "#", "$"]
 unicode_others = ["\u09F3", "\u09FA", "\u09CD", "\u0980", "\u09BD", "\u0023", "\u0024"]
+
+# tokenization puctuation
+tokenization_punctuations = ["।", ",", ";", ":", "?", "!", "'", ".", "\"", "-",
+                "[", "]", "{", "}", "(", ")", '–', "—", "―", "~"]
+
+
+# 
+sentence_delimeter = ["।","?"]

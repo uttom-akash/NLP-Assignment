@@ -2,33 +2,27 @@ from text_preprocessor.WordTokenizer import WordTokenizer
 from text_preprocessor.SentenceSplitter import SentenceSplitter
 import re
 from collections import defaultdict
-from decorator.WriteDecorator import WriteAfter
-from decorator.ReadDecorator import ReadBefore
 
 class Statistics(object):
     def __init__(self):
         pass
     
-    @WriteAfter(filename="output/histogram.json")
     def generate(self,text : str ):
         stats=dict()
         stats['Corpus size (in words) excluding punctuation']=self.numberOfWords(text)
         stats['Corpus size (in chars) excluding spaces']=self.numberOfChars(text)
         stats['Average sentence length (in words)']=self.avarageSentenceLength(text)
-        stats['Vocabulary size (no. of unique words)']=self.numberOfChars(text)
+        stats['Vocabulary size (no. of unique words)']= len(WordTokenizer().uniqueTokenize(text))
         stats['Corpus size (in lines)']=len(text.split('\n'))
-        stats['Top ten frequent words']=self.topFrequentWords(text)  
+        stats['Lexical diversity'] =stats['Vocabulary size (no. of unique words)'] / stats['Corpus size (in words) excluding punctuation']
+        stats['Top ten frequent words']=self.topFrequentWords(text)
         
         return stats
         
-        
-    @ReadBefore
-    def generateFromFile(self,filename : str ,text : str = ""):
-        return self.generate(text)
 
     def topFrequentWords(self,text:str,n=10):
         wt = WordTokenizer()
-        tokens = wt.baseTokenize(text)
+        tokens = wt.tokenize(text)
         frequency=defaultdict(lambda:0)
         for token in tokens:
             frequency[token]+=1
@@ -45,7 +39,7 @@ class Statistics(object):
         
     def numberOfWords(self,text : str):
         wt = WordTokenizer()
-        tokens = wt.baseTokenize(text)
+        tokens = wt.tokenize(text)
         return len(tokens)
     
     def numberOfChars(self,text:str):
@@ -53,7 +47,7 @@ class Statistics(object):
         return len(onlyText)
 
     def avarageSentenceLength(self,text : str)-> list :
-        splittedList = SentenceSplitter().baseSplit(text)
+        splittedList = SentenceSplitter().split(text)
         totalLength,numSentences= 0, len(splittedList)
 
         for sent in splittedList:
