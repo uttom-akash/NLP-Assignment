@@ -2,17 +2,17 @@
     {
         "Language": "Bangla",
         "stats": {
-            "Corpus size (in words) excluding punctuation": 605,
+            "Corpus size (in words) excluding punctuation": 599,
             "Corpus size (in chars) excluding spaces": 3232,
             "Average sentence length (in words)": 11.3,
-            "Vocabulary size (no. of unique words)": 385,
+            "Vocabulary size (no. of unique words)": 380,
             "Corpus size (in lines)": 19,
-            "Lexical diversity": 0.64,
+            "Lexical diversity": 0.63,
             "Top ten frequent words": [
                 [
                     "বঙ্গবন্ধু",
                     15,
-                    2.0
+                    3.0
                 ],
                 [
                     "ছিল",
@@ -22,6 +22,11 @@
                 [
                     "মার্চ",
                     9,
+                    2.0
+                ],
+                [
+                    "৭",
+                    7,
                     1.0
                 ],
                 [
@@ -40,22 +45,17 @@
                     1.0
                 ],
                 [
-                    "’",
-                    6,
-                    1.0
-                ],
-                [
                     "সঙ্গে",
                     6,
                     1.0
                 ],
                 [
-                    "৭",
+                    "ভাষণ",
                     5,
                     1.0
                 ],
                 [
-                    "ভাষণ",
+                    "বলেছিলেন",
                     5,
                     1.0
                 ]

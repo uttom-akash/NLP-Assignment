@@ -9,7 +9,7 @@ class WordTokenizer(object):
             self.punctuations = LanguageInfo.punctuations
 
     def tokenize(self, text: str) -> list:
-        pattern="[।,;:?!'\.\\-\[\]\{\}\(\)–—―~]"
+        pattern="[।,;:?!'\.\\-\[\]\{\}\(\)–—―~‘’]"
         text = re.sub(pattern," ",text)
         tokens = list(map(str.strip,text.split()))
 
