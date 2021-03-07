@@ -11,7 +11,7 @@ class WordTokenizer(object):
     def tokenize(self, text: str) -> list:
         pattern="[।,;:?!'\.\\-\[\]\{\}\(\)–—―~]"
         text = re.sub(pattern," ",text)
-        tokens = text.split()
+        tokens = list(map(str.strip,text.split()))
 
         return tokens
 

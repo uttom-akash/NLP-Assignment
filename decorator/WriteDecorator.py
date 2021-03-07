@@ -7,9 +7,12 @@ def WriteAfter(filename : str = "Text.txt",mode='w'):
         file=FileIO()
 
         def write(texts):
-            if type(texts) is list :
-                file.writeLines(filename=filename,lines=texts,mode=mode)
-            elif type(texts) is dict:
+            if type(texts) is list:
+                if len(texts)==0 or type(texts[0]) is str :
+                    file.writeLines(filename=filename,lines=texts,mode=mode)
+                else :
+                    file.writeJson(filename=filename,text=texts,mode=mode)
+            elif type(texts) is dict :
                 file.writeJson(filename=filename,text=texts,mode=mode)
             else :
                 file.write(filename=filename,text=texts,mode=mode)

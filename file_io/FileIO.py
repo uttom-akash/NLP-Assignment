@@ -41,7 +41,7 @@ class FileIO(object):
             logging.info("Write completed into {}.".format(filename))
     
     @PathMiddleware("F:/NLP Assignment")
-    def writeJson(self,filename: str, text : dict, mode : str = 'w'):
+    def writeJson(self,filename: str, text : object , mode : str = 'w'):
         try:
             with open(filename,mode,encoding='utf-8') as fout :
                 json.dump(text,fout, ensure_ascii=False,indent=4)

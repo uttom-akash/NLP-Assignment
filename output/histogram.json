@@ -1,60 +1,128 @@
-{
-    "Corpus size (in words) excluding punctuation": 1303,
-    "Corpus size (in chars) excluding spaces": 6802,
-    "Average sentence length (in words)": 10.42741935483871,
-    "Vocabulary size (no. of unique words)": 576,
-    "Corpus size (in lines)": 48,
-    "Lexical diversity": 0.442056792018419,
-    "Top ten frequent words": [
-        [
-            "থেকে",
-            23,
-            1.7651573292402147
-        ],
-        [
-            "হয়েছে",
-            19,
-            1.4581734458940905
-        ],
-        [
-            "দেশে",
-            16,
-            1.2279355333844972
-        ],
-        [
-            "সংক্রমণ",
-            15,
-            1.1511895625479662
-        ],
-        [
-            "গত",
-            14,
-            1.0744435917114352
-        ],
-        [
-            "শনাক্তের",
-            14,
-            1.0744435917114352
-        ],
-        [
-            "রোগী",
-            13,
-            0.9976976208749041
-        ],
-        [
-            "হয়",
-            13,
-            0.9976976208749041
-        ],
-        [
-            "জন",
-            12,
-            0.920951650038373
-        ],
-        [
-            "শুরু",
-            12,
-            0.920951650038373
-        ]
-    ]
-}
+[
+    {
+        "Language": "Bangla",
+        "stats": {
+            "Corpus size (in words) excluding punctuation": 605,
+            "Corpus size (in chars) excluding spaces": 3232,
+            "Average sentence length (in words)": 11.3,
+            "Vocabulary size (no. of unique words)": 385,
+            "Corpus size (in lines)": 19,
+            "Lexical diversity": 0.64,
+            "Top ten frequent words": [
+                [
+                    "বঙ্গবন্ধু",
+                    15,
+                    2.0
+                ],
+                [
+                    "ছিল",
+                    10,
+                    2.0
+                ],
+                [
+                    "মার্চ",
+                    9,
+                    1.0
+                ],
+                [
+                    "না",
+                    7,
+                    1.0
+                ],
+                [
+                    "কথা",
+                    7,
+                    1.0
+                ],
+                [
+                    "ঘোষণা",
+                    6,
+                    1.0
+                ],
+                [
+                    "’",
+                    6,
+                    1.0
+                ],
+                [
+                    "সঙ্গে",
+                    6,
+                    1.0
+                ],
+                [
+                    "৭",
+                    5,
+                    1.0
+                ],
+                [
+                    "ভাষণ",
+                    5,
+                    1.0
+                ]
+            ]
+        }
+    },
+    {
+        "Language": "English",
+        "stats": {
+            "Corpus size (in words) excluding punctuation": 671,
+            "Corpus size (in chars) excluding spaces": 3462,
+            "Average sentence length (in words)": 20.25,
+            "Vocabulary size (no. of unique words)": 347,
+            "Corpus size (in lines)": 20,
+            "Lexical diversity": 0.52,
+            "Top ten frequent words": [
+                [
+                    "the",
+                    42,
+                    6.0
+                ],
+                [
+                    "of",
+                    22,
+                    3.0
+                ],
+                [
+                    "to",
+                    19,
+                    3.0
+                ],
+                [
+                    "for",
+                    13,
+                    2.0
+                ],
+                [
+                    "and",
+                    12,
+                    2.0
+                ],
+                [
+                    "in",
+                    12,
+                    2.0
+                ],
+                [
+                    "a",
+                    11,
+                    2.0
+                ],
+                [
+                    "Pakistan",
+                    10,
+                    1.0
+                ],
+                [
+                    "March",
+                    8,
+                    1.0
+                ],
+                [
+                    "speech",
+                    8,
+                    1.0
+                ]
+            ]
+        }
+    }
+]
