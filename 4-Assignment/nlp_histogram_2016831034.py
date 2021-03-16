@@ -4,10 +4,10 @@ sys.path.append(os.path.abspath(os.path.join(__file__,"../../")))
 from text_preprocessor.Statistics import Statistics
 from decorator.WriteDecorator import WriteAfter
 from decorator.ReadDecorator import ReadBefore
-from file_io.TableIO import TableIO
-
+from iio.TableIO import TableIO
 import argparse
 import logging
+
 
 logging.basicConfig(level=logging.INFO)
 
@@ -42,7 +42,7 @@ def writeToConsole(states : list):
         if type(v) is list:
             continue 
         tbIO.printRow([k,banglaStats['stats'][k],englishStats['stats'][k]])
-        tbIO.printSeparator()
+    tbIO.printSeparator()    
 
     tbIO.printHeader("[ FREQUENT WORDS LIST ]")
     tbIO.setConfig(cellWidth=[25,10,10,25,10,10])
@@ -55,7 +55,6 @@ def writeToConsole(states : list):
         banglaWord=banglaStats['stats']['Top ten frequent words'][index]
         englishWord=englishStats['stats']['Top ten frequent words'][index]
         tbIO.printRow([englishWord[0],englishWord[1],englishWord[2],banglaWord[0],banglaWord[1],banglaWord[2]])
-        # tbIO.printSeparator()
     tbIO.printSeparator()
     
     return tbIO.formattedlines

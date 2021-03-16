@@ -7,7 +7,7 @@ from decorator.ReadDecorator import ReadBefore
 import argparse
 import logging
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 def parseArgs():
     parser=argparse.ArgumentParser()

@@ -1,5 +1,5 @@
 import logging
-from file_io.FileIO import FileIO
+from iio.FileIO import FileIO
 from functools import wraps
 
 def WriteAfter(filename : str = "Text.txt",mode='w'):

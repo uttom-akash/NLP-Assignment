@@ -18,6 +18,7 @@ class TableIO(object):
         self.generateRowFormat()
     
     def generateRowFormat(self):
+        # {0 : <5}
         self.dataLine=" ".join(self.vertical+" {"+str(index)+": <"+str(self.cellWidth[index])+"}" for index in range(len(self.cellWidth)))+" "+self.vertical
         self.separatorLine = "+"+(sum(self.cellWidth)+3*len(self.cellWidth)-1)*"-"+"+"
 
